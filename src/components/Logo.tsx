@@ -31,10 +31,7 @@
 export function Logo() {
   return (
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-      width="314.824px" height="288px" viewBox="0 0 314.824 288" enable-background="new 0 0 314.824 288" >
-      <g id="color_background">
-        <rect x="0.104" fill="#74AED7" width="314.721" height="288" />
-      </g>
+      width="314.824px" height="288px" viewBox="0 0 314.824 288">
       <g id="darkblue">
         <path fill-rule="evenodd" clip-rule="evenodd" fill="#29266A" d="M176.05,239.522c-1.146,1.271-2.029,2.739-3.019,4.131
 		c-4.261,5.984-8.502,11.98-12.742,17.979c-3.441,4.87-6.866,9.75-10.303,14.624c-1.938,2.747-3.892,5.482-5.815,8.238
