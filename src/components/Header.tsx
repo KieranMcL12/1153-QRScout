@@ -6,7 +6,7 @@ export function Header() {
   return (
     <Helmet>
       <title>QRScout | {page_title}</title>
-      <link rel="icon" href="/1153-QRScout/favicon.ico" />
+      <link rel="icon" href="/QRScout/favicon.ico" />
     </Helmet>
   );
 }
