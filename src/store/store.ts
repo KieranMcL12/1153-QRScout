@@ -1,14 +1,52 @@
 import { produce } from 'immer';
 import { cloneDeep } from 'lodash';
-import configJson from '../../config/2025/config.json';
+import configJson from '../../config/2026/config.json';
 import {
+  ActionTrackerInputData,
   Config,
   configSchema,
   InputBase,
 } from '../components/inputs/BaseInputProps';
+import { MatchData } from '../types/matchData';
+import { Result } from '../types/result';
 import { createStore } from './createStore';
 
-type Result<T> = { success: true; data: T } | { success: false; error: Error };
+export type { Result };
+
+/**
+ * Generates field values for a config, including dynamic fields for action-tracker inputs.
+ * For action-tracker, creates _count and _times fields for each action.
+ */
+function generateFieldValues(config: Config): { code: string; value: any }[] {
+  const fieldValues: { code: string; value: any }[] = [];
+
+  for (const section of config.sections) {
+    for (const field of section.fields) {
+      if (field.type === 'action-tracker') {
+        // For action-tracker, generate _count and _times fields for each action
+        const actionField = field as ActionTrackerInputData;
+        for (const action of actionField.actions) {
+          fieldValues.push({
+            code: `${field.code}_${action.code}_count`,
+            value: 0,
+          });
+          fieldValues.push({
+            code: `${field.code}_${action.code}_times`,
+            value: '',
+          });
+        }
+      } else {
+        // Standard field
+        fieldValues.push({
+          code: field.code,
+          value: field.defaultValue,
+        });
+      }
+    }
+  }
+
+  return fieldValues;
+}
 
 function getDefaultConfig(): Config {
   const config = configSchema.safeParse(configJson);
@@ -28,13 +66,12 @@ export interface QRScoutState {
   formData: Config;
   fieldValues: { code: string; value: any }[];
   showQR: boolean;
+  matchData?: MatchData[];
 }
 
 const initialState: QRScoutState = {
   formData: getDefaultConfig(),
-  fieldValues: getDefaultConfig().sections.flatMap(s =>
-    s.fields.map(f => ({ code: f.code, value: f.defaultValue })),
-  ),
+  fieldValues: generateFieldValues(getDefaultConfig()),
   showQR: false,
 };
 
@@ -54,7 +91,9 @@ export async function fetchConfigFromURL(url: string): Promise<Result<void>> {
   try {
     const response = await fetch(url);
     if (!response.ok) {
-      throw new Error(`Failed to fetch config from URL: ${response.statusText}`);
+      throw new Error(
+        `Failed to fetch config from URL: ${response.statusText}`,
+      );
     }
     const configText = await response.text();
     return setConfig(configText);
@@ -84,16 +123,20 @@ export function resetFields() {
 }
 
 export function forceResetFields() {
-  window.dispatchEvent(new CustomEvent('forceResetFields', { detail: 'forceReset' }));
+  window.dispatchEvent(
+    new CustomEvent('forceResetFields', { detail: 'forceReset' }),
+  );
 }
 
 export function setFormData(config: Config) {
   const oldState = useQRScoutState.getState();
   forceResetFields();
-  const newFieldValues = config.sections.flatMap(s =>
-    s.fields.map(f => ({ code: f.code, value: f.defaultValue })),
-  );
-  useQRScoutState.setState({ ...oldState, fieldValues: newFieldValues, formData: config });
+  const newFieldValues = generateFieldValues(config);
+  useQRScoutState.setState({
+    ...oldState,
+    fieldValues: newFieldValues,
+    formData: config,
+  });
 }
 
 export function setConfig(configText: string): Result<void> {
@@ -129,36 +172,7 @@ export function inputSelector<T extends InputBase>(
   };
 }
 
-export interface SaveState {
-  saveData: Array<string>;
-  isSaveData: boolean;
-}
-const initialSaveState: SaveState = {
-  saveData: [],
-  isSaveData: false
-};
-export const useSaveState = createStore<SaveState>(
-  initialSaveState,
-  'saveData',
-  {
-    version: 1,
-  },
-);
-export function saveData(newData: string) {
-  var data = useSaveState.getState().saveData;
-  if (data[data.length - 1] == newData){
-    if (!confirm("Last two saved items are the same. Save anyway?")){
-      return
-    }
-  }
-  data.push(newData);
-  useSaveState.setState({ saveData: data, isSaveData: true });
-}
 
-export function getSaveData() {
-  return useSaveState.getState().saveData;
-}
-
-export function clearSaveData(){
-  useSaveState.setState({ saveData: [], isSaveData: false });
+export function setMatchData(matchData: MatchData[]) {
+  useQRScoutState.setState({ matchData });
 }
