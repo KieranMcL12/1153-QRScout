@@ -77,7 +77,7 @@ export function ConfigEditor(props: ConfigEditorProps) {
       validate: true,
       schemas: [
         {
-          uri: 'https://timberwolves1153.github.io/QRScout-Rebuilt/schema.json',
+          uri: 'https://kieranmcl12.github.io/1153-QRScout/schema.json',
           fileMatch: ['*'],
           schema,
         },
