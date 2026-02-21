@@ -35,11 +35,11 @@
             "chart_5": "27 87% 67%"
         },
         "dark": {
-            "background": "0 0% 3.9%",
+            "background": "0 0% 8%",
             "foreground": "0 0% 98%",
-            "card": "0 0% 3.9%",
+            "card": "0 0% 8%",
             "card_foreground": "0 0% 98%",
-            "popover": "0 0% 3.9%",
+            "popover": "0 0% 8%",
             "popover_foreground": "0 0% 98%",
             "primary": "227 53% 25%",
             "primary_foreground": "227 53% 98%",
