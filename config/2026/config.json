@@ -430,9 +430,8 @@
                     "required": false,
                     "code": "scoredHow",
                     "formResetBehavior": "reset",
-                    "defaultValue": "blank",
+                    "defaultValue": "",
                     "choices": {
-                        "blank": " ",
                         "driving": "While driving",
                         "stationary": "While stationary",
                         "both": "Both",
@@ -458,9 +457,8 @@
                     "required": false,
                     "code": "passedHow",
                     "formResetBehavior": "reset",
-                    "defaultValue": "blank",
+                    "defaultValue": "",
                     "choices": {
-                        "blank": " ",
                         "driving": "While driving",
                         "stationary": "While stationary",
                         "both": "Both",
@@ -474,9 +472,8 @@
                     "required": false,
                     "code": "passLoc",
                     "formResetBehavior": "reset",
-                    "defaultValue": "blank",
+                    "defaultValue": "",
                     "choices": {
-                        "blank": " ",
                         "scattered": "Scattered",
                         "intentional": "Intentional",
                         "both": "Both",
