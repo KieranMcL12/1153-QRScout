@@ -432,7 +432,7 @@
                     "formResetBehavior": "reset",
                     "defaultValue": "blank",
                     "choices": {
-                        "blank": "&nbsp;",
+                        "blank": "",
                         "driving": "While driving",
                         "stationary": "While stationary",
                         "both": "Both",
@@ -460,7 +460,7 @@
                     "formResetBehavior": "reset",
                     "defaultValue": "blank",
                     "choices": {
-                        "blank": "&nbsp;",
+                        "blank": "",
                         "driving": "While driving",
                         "stationary": "While stationary",
                         "both": "Both",
@@ -476,7 +476,7 @@
                     "formResetBehavior": "reset",
                     "defaultValue": "blank",
                     "choices": {
-                        "blank": "&nbsp;",
+                        "blank": "",
                         "scattered": "Scattered",
                         "intentional": "Intentional",
                         "both": "Both",
