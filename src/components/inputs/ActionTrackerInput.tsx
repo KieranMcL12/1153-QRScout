@@ -131,9 +131,25 @@ export default function ActionTrackerInput(props: ConfigurableInputProps) {
     const elapsed = now - startTimeRef.current;
     startTimeRef.current = now;
     elapsedAccumulatorRef.current += elapsed;
+
+    // Auto-stop if timerDuration is set and exceeded
+    const maxMs = data.timerDuration ? data.timerDuration * 1000 : 0;
+    if (maxMs && elapsedAccumulatorRef.current >= maxMs) {
+      // cap elapsed to configured duration
+      elapsedAccumulatorRef.current = maxMs;
+      setElapsedTime(maxMs);
+      // stop the timer and cancel RAF
+      setIsRunning(false);
+      if (animationFrameRef.current !== null) {
+        cancelAnimationFrame(animationFrameRef.current);
+        animationFrameRef.current = null;
+      }
+      return;
+    }
+
     setElapsedTime(elapsedAccumulatorRef.current);
     animationFrameRef.current = requestAnimationFrame(updateTimer);
-  }, []);
+  }, [data.timerDuration]);
 
   // Effect to handle timer start/stop
   useEffect(() => {
