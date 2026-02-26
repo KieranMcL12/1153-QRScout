@@ -248,15 +248,19 @@
                     }
                 },
                 {
-                    "title": "Fuel Scored in Auto?",
-                    "description": "The number of fuel scored in autonomous.",
-                    "type": "counter",
+                    "title": "Scoring Acc. in Auto?",
+                    "description": "The percentage accuracy for the number of fuel scored in autonomous.",
+                    "type": "select",
                     "required": false,
                     "code": "autoFuelScored",
                     "formResetBehavior": "reset",
-                    "defaultValue": 0,
-                    "min": 0,
-                    "step": 1
+                    "defaultValue": "0",
+                    "choices": {
+                        "0": "🟥 0%-25%",
+                        "25": "🟧 25%-50%",
+                        "50": "🟨 50%-75%",
+                        "75": "🟩 75%-100%"
+                    }
                 }
             ]
         },
