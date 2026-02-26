@@ -132,10 +132,14 @@ export default function ActionTrackerInput(props: ConfigurableInputProps) {
     startTimeRef.current = now;
     elapsedAccumulatorRef.current += elapsed;
 
-    // Auto-stop if timerDuration is set and exceeded
-    const maxMs = data.timerDuration ? data.timerDuration * 1000 : 0;
+    // Enforce a hard stop at 20 seconds (20000 ms). If data.timerDuration is set,
+    // respect it but never exceed 20 seconds.
+    const HARD_LIMIT_MS = 20_000;
+    const configuredMs = data.timerDuration ? data.timerDuration * 1000 : HARD_LIMIT_MS;
+    const maxMs = Math.min(configuredMs, HARD_LIMIT_MS);
+
     if (maxMs && elapsedAccumulatorRef.current >= maxMs) {
-      // cap elapsed to configured duration
+      // cap elapsed to configured duration / hard limit
       elapsedAccumulatorRef.current = maxMs;
       setElapsedTime(maxMs);
       // stop the timer and cancel RAF
