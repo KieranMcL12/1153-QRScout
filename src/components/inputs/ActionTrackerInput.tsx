@@ -152,7 +152,7 @@ export default function ActionTrackerInput(props: ConfigurableInputProps) {
 
     setElapsedTime(elapsedAccumulatorRef.current);
     animationFrameRef.current = requestAnimationFrame(updateTimer);
-  }, [data.timerDuration, props.section]);
+  }, [props.section]);
 
   // Effect to handle timer start/stop
   useEffect(() => {
