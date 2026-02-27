@@ -132,13 +132,12 @@ export default function ActionTrackerInput(props: ConfigurableInputProps) {
     startTimeRef.current = now;
     elapsedAccumulatorRef.current += elapsed;
 
-    // Hard stop based on section: Teleop => 2m20s (140000 ms), otherwise 20s (20000 ms).
-    const HARD_LIMIT_MS = props.section === 'Teleop' ? 140_000 : 20_000;
-    const configuredMs = data.timerDuration ? data.timerDuration * 1000 : HARD_LIMIT_MS;
-    const maxMs = Math.min(configuredMs, HARD_LIMIT_MS);
+    // Use unconditional hard limits based on section:
+    // Teleop => 2m20s (140000 ms), otherwise 20s (20000 ms).
+    const maxMs = props.section === 'Teleop' ? 140_000 : 20_000;
 
-    if (maxMs && elapsedAccumulatorRef.current >= maxMs) {
-      // cap elapsed to configured duration / hard limit
+    if (elapsedAccumulatorRef.current >= maxMs) {
+      // cap elapsed to hard limit
       elapsedAccumulatorRef.current = maxMs;
       setElapsedTime(maxMs);
       // stop the timer and cancel RAF
@@ -174,6 +173,9 @@ export default function ActionTrackerInput(props: ConfigurableInputProps) {
 
   // Start timer
   const startTimer = useCallback(() => {
+    // reset accumulator so each start begins at 0
+    elapsedAccumulatorRef.current = 0;
+    setElapsedTime(0);
     setIsRunning(true);
   }, []);
 
