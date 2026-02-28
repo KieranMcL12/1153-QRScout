@@ -115,7 +115,7 @@
       "name": "Auto Robot 1",
       "fields": [
         {
-          "title": "Team Number",
+          "title": "Team Number1",
           "description": "The team number of the robot you're scouting.",
           "type": "number",
           "required": true,
@@ -126,7 +126,7 @@
           "max": 19999
         },
         {
-          "title": "Starting Position",
+          "title": "Starting Position1",
           "description": "The starting position of the robot.",
           "type": "select",
           "required": true,
@@ -144,7 +144,7 @@
           }
         },
         {
-          "title": "Actions",
+          "title": "Actions1",
           "description": "Track actions performed during autonomous.",
           "type": "action-tracker",
           "required": false,
@@ -154,57 +154,57 @@
           "mode": "tap",
           "actions": [
             {
-              "label": "Launch",
+              "label": "Launch1",
               "code": "Launch"
             },
             {
-              "label": "Collect",
+              "label": "Collect1",
               "code": "collect"
             },
             {
-              "label": "Leave",
+              "label": "Leave1",
               "code": "Leave"
             },
             {
-              "label": "Return",
+              "label": "Return1",
               "code": "Return"
             },
             {
-              "label": "Trench",
+              "label": "Trench1",
               "code": "Trench"
             },
             {
-              "label": "Bump",
+              "label": "Bump1",
               "code": "Bump"
             },
             {
-              "label": "Passing",
+              "label": "Passing1",
               "code": "passing"
             },
             {
-              "label": "Faffing/Stuck on Fuel",
+              "label": "Faffing/Stuck on Fuel1",
               "code": "Stuck"
             },
             {
-              "label": "Foul",
+              "label": "Foul1",
               "code": "Foul"
             },
             {
-              "label": "Climbing",
+              "label": "Climbing1",
               "code": "climbing"
             },
             {
-              "label": "Left",
+              "label": "Left1",
               "code": "Left"
             },
             {
-              "label": "Right",
+              "label": "Right1",
               "code": "Right"
             }
           ]
         },
         {
-          "title": "Climbed",
+          "title": "Climbed1",
           "description": "Did the robot climb during autonomous?",
           "type": "select",
           "required": false,
@@ -218,7 +218,7 @@
           }
         },
         {
-          "title": "Where Climbed",
+          "title": "Where Climbed1",
           "description": "Where on the tower did the robot climb in autonomous?",
           "type": "select",
           "required": false,
@@ -232,7 +232,7 @@
           }
         },
         {
-          "title": "End Position",
+          "title": "End Position1",
           "description": "Where they ended on the field at the end of Autonomous?",
           "type": "select",
           "required": false,
@@ -246,7 +246,7 @@
           }
         },
         {
-          "title": "Alliance won auto?",
+          "title": "Alliance won auto?1",
           "description": "Did your alliance win the autonomous period?",
           "type": "boolean",
           "required": false,
@@ -255,7 +255,7 @@
           "defaultValue": false
         },
         {
-          "title": "Comments",
+          "title": "Comments1",
           "type": "text",
           "required": false,
           "code": "co",
@@ -270,7 +270,7 @@
       "name": "Auto Robot 2",
       "fields": [
         {
-          "title": "Team Number",
+          "title": "Team Number2",
           "description": "The team number of the robot you're scouting.",
           "type": "number",
           "required": true,
@@ -281,7 +281,7 @@
           "max": 19999
         },
         {
-          "title": "Starting Position",
+          "title": "Starting Position2",
           "description": "The starting position of the robot.",
           "type": "select",
           "required": true,
@@ -299,7 +299,7 @@
           }
         },
         {
-          "title": "Actions",
+          "title": "Actions2",
           "description": "Track actions performed during autonomous.",
           "type": "action-tracker",
           "required": false,
@@ -309,57 +309,57 @@
           "mode": "tap",
           "actions": [
             {
-              "label": "Launch",
+              "label": "Launch2",
               "code": "Launch2"
             },
             {
-              "label": "Collect",
+              "label": "Collect2",
               "code": "collect2"
             },
             {
-              "label": "Leave",
+              "label": "Leave2",
               "code": "Leave2"
             },
             {
-              "label": "Return",
+              "label": "Return2",
               "code": "Return2"
             },
             {
-              "label": "Trench",
+              "label": "Trench2",
               "code": "Trench2"
             },
             {
-              "label": "Bump",
+              "label": "Bump2",
               "code": "Bump2"
             },
             {
-              "label": "Passing",
+              "label": "Passing2",
               "code": "passing2"
             },
             {
-              "label": "Faffing/Stuck on Fuel",
+              "label": "Faffing/Stuck on Fuel2",
               "code": "Stuck2"
             },
             {
-              "label": "Foul",
+              "label": "Foul2",
               "code": "Foul2"
             },
             {
-              "label": "Climbing",
+              "label": "Climbing2",
               "code": "climbing2"
             },
             {
-              "label": "Left",
+              "label": "Left2",
               "code": "Left2"
             },
             {
-              "label": "Right",
+              "label": "Right2",
               "code": "Right2"
             }
           ]
         },
         {
-          "title": "Climbed",
+          "title": "Climbed2",
           "description": "Did the robot climb during autonomous?",
           "type": "select",
           "required": false,
@@ -373,7 +373,7 @@
           }
         },
         {
-          "title": "Where Climbed",
+          "title": "Where Climbed2",
           "description": "Where on the tower did the robot climb in autonomous?",
           "type": "select",
           "required": false,
@@ -387,7 +387,7 @@
           }
         },
         {
-          "title": "End Position",
+          "title": "End Position2",
           "description": "Where they ended on the field at the end of Autonomous?",
           "type": "select",
           "required": false,
@@ -401,7 +401,7 @@
           }
         },
         {
-          "title": "Alliance won auto?",
+          "title": "Alliance won auto?2",
           "description": "Did your alliance win the autonomous period?",
           "type": "boolean",
           "required": false,
@@ -410,7 +410,7 @@
           "defaultValue": false
         },
         {
-          "title": "Comments",
+          "title": "Comments2",
           "type": "text",
           "required": false,
           "code": "com2",
@@ -425,7 +425,7 @@
       "name": "Auto Robot 3",
       "fields": [
         {
-          "title": "Team Number",
+          "title": "Team Number3",
           "description": "The team number of the robot you're scouting.",
           "type": "number",
           "required": true,
@@ -436,7 +436,7 @@
           "max": 19999
         },
         {
-          "title": "Starting Position",
+          "title": "Starting Position3",
           "description": "The starting position of the robot.",
           "type": "select",
           "required": true,
@@ -454,7 +454,7 @@
           }
         },
         {
-          "title": "Actions",
+          "title": "Actions3",
           "description": "Track actions performed during autonomous.",
           "type": "action-tracker",
           "required": false,
@@ -464,57 +464,57 @@
           "mode": "tap",
           "actions": [
             {
-              "label": "Launch",
+              "label": "Launch3",
               "code": "Launch3"
             },
             {
-              "label": "Collect",
+              "label": "Collect3",
               "code": "collect3"
             },
             {
-              "label": "Leave",
+              "label": "Leave3",
               "code": "Leave3"
             },
             {
-              "label": "Return",
+              "label": "Return3",
               "code": "Return3"
             },
             {
-              "label": "Trench",
+              "label": "Trench3",
               "code": "Trench3"
             },
             {
-              "label": "Bump",
+              "label": "Bump3",
               "code": "Bump3"
             },
             {
-              "label": "Passing",
+              "label": "Passing3",
               "code": "passing3"
             },
             {
-              "label": "Faffing/Stuck on Fuel",
+              "label": "Faffing/Stuck on Fuel3",
               "code": "Stuck3"
             },
             {
-              "label": "Foul",
+              "label": "Foul3",
               "code": "Foul3"
             },
             {
-              "label": "Climbing",
+              "label": "Climbing3",
               "code": "climbing3"
             },
             {
-              "label": "Left",
+              "label": "Left3",
               "code": "Left3"
             },
             {
-              "label": "Right",
+              "label": "Right3",
               "code": "Right3"
             }
           ]
         },
         {
-          "title": "Climbed",
+          "title": "Climbed3",
           "description": "Did the robot climb during autonomous?",
           "type": "select",
           "required": false,
@@ -528,7 +528,7 @@
           }
         },
         {
-          "title": "Where Climbed",
+          "title": "Where Climbed3",
           "description": "Where on the tower did the robot climb in autonomous?",
           "type": "select",
           "required": false,
@@ -542,7 +542,7 @@
           }
         },
         {
-          "title": "End Position",
+          "title": "End Position3",
           "description": "Where they ended on the field at the end of Autonomous?",
           "type": "select",
           "required": false,
@@ -556,7 +556,7 @@
           }
         },
         {
-          "title": "Alliance won auto?",
+          "title": "Alliance won auto?3",
           "description": "Did your alliance win the autonomous period?",
           "type": "boolean",
           "required": false,
@@ -565,10 +565,10 @@
           "defaultValue": false
         },
         {
-          "title": "Comments",
+          "title": "Comments3",
           "type": "text",
           "required": false,
-          "code": "co3",
+          "code": "com3",
           "formResetBehavior": "reset",
           "defaultValue": "",
           "min": 0,
