@@ -5,6 +5,7 @@
 body {
   overscroll-behavior: contain;
   user-select: none;
+  scroll-behavior: smooth;
 }
 
 @font-face {
