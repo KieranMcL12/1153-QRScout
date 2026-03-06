@@ -143,6 +143,24 @@
       "name": "Autonomous",
       "fields": [
         {
+          "title": "Starting Position",
+          "description": "The starting position of the robot.",
+          "type": "select",
+          "required": true,
+          "code": "startPos",
+          "formResetBehavior": "reset",
+          "defaultValue": "",
+          "choices": {
+            "OT": "Outpost Trench",
+            "OBFT": "Outpost Bump Favoring Trench",
+            "OBFH": "Outpost Bump Favoring Hub",
+            "H": "Hub",
+            "DBFH": "Depot Bump Favoring Hub",
+            "DBFT": "Depot Bump Favoring Trench",
+            "DT": "Depot Trench"
+          }
+        },
+        {
           "title": "Actions",
           "description": "Track actions performed during autonomous.",
           "type": "action-tracker",
@@ -236,7 +254,16 @@
             "Rig": "Right"
           }
         },
-      {
+        {
+          "title": "Alliance won auto?",
+          "description": "Did your alliance win the autonomous period?",
+          "type": "boolean",
+          "required": false,
+          "code": "allianceWonAuto",
+          "formResetBehavior": "reset",
+          "defaultValue": false
+        },        
+        {
           "title": "Scoring Acc. in Auto?",
           "description": "The percentage accuracy for the number of fuel scored in autonomous.",
           "type": "select",
@@ -279,7 +306,7 @@
           "description": "Where did the robot score/corral all of the balls to during the match?",
           "type": "select",
           "required": true,
-          "code": "climbed",
+          "code": "GoldSpot",
           "formResetBehavior": "reset",
           "defaultValue": "No",
           "choices": {
@@ -297,7 +324,7 @@
           "description": "What did the robot mainly do during this Active period?",
           "type": "select",
           "required": true,
-          "code": "climbed",
+          "code": "Role",
           "formResetBehavior": "reset",
           "defaultValue": "None",
           "choices": {
@@ -314,7 +341,7 @@
           "description": "The percentage accuracy for the number of fuel scored in autonomous.",
           "type": "select",
           "required": false,
-          "code": "autoFuelScored",
+          "code": "activeFuelScored",
           "formResetBehavior": "reset",
           "defaultValue": "0",
           "choices": {
@@ -322,7 +349,8 @@
             "25": "🟧 25%-50%",
             "50": "🟨 50%-75%",
             "75": "🟩 75%-100%"
-        }
+          }
+        },
         {
           "title": "Defended during Active Shift?",
           "description": "Did the robot play defense during the match?",
@@ -367,7 +395,7 @@
           "description": "Where did the robot score/corral all of the balls to during the match?",
           "type": "select",
           "required": true,
-          "code": "climbed",
+          "code": "GoldSpot2",
           "formResetBehavior": "reset",
           "defaultValue": "No",
           "choices": {
@@ -385,7 +413,7 @@
           "description": "What did the robot mainly do during this Active period?",
           "type": "select",
           "required": true,
-          "code": "climbed",
+          "code": "Role2",
           "formResetBehavior": "reset",
           "defaultValue": "None",
           "choices": {
