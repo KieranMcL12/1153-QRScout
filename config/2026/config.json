@@ -143,24 +143,6 @@
       "name": "Autonomous",
       "fields": [
         {
-          "title": "Starting Position",
-          "description": "The starting position of the robot.",
-          "type": "select",
-          "required": true,
-          "code": "startPos",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "OT": "Outpost Trench",
-            "OBFT": "Outpost Bump Favoring Trench",
-            "OBFH": "Outpost Bump Favoring Hub",
-            "H": "Hub",
-            "DBFH": "Depot Bump Favoring Hub",
-            "DBFT": "Depot Bump Favoring Trench",
-            "DT": "Depot Trench"
-          }
-        },
-        {
           "title": "Actions",
           "description": "Track actions performed during autonomous.",
           "type": "action-tracker",
