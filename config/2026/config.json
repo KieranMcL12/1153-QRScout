@@ -206,7 +206,7 @@
           "choices": {
             "No": "No Climb",
             "Yes": "Climb",
-            "F": "Failed Climb"
+            "Fail": "Failed Climb"
           }
         },
         {
@@ -218,9 +218,9 @@
           "formResetBehavior": "reset",
           "defaultValue": "No",
           "choices": {
-            "Out": "Output Side",
-            "Mid": "Middle",
-            "Dep": "Depot Side"
+            "Output": "Output Side",
+            "Middle": "Middle",
+            "Depot": "Depot Side"
           }
         },
         {
@@ -280,7 +280,7 @@
           "description": "Did the robot cross into the opposing alliance's zone?",
           "type": "boolean",
           "required": false,
-          "code": "crossedZone",
+          "code": "ActivecrossedZone",
           "formResetBehavior": "reset",
           "defaultValue": false
         },
@@ -289,7 +289,7 @@
           "description": "Where did the robot score/corral all of the balls to during the match?",
           "type": "select",
           "required": true,
-          "code": "GoldSpot",
+          "code": "ActiveGoldSpot",
           "formResetBehavior": "reset",
           "defaultValue": "No",
           "choices": {
@@ -307,7 +307,7 @@
           "description": "What did the robot mainly do during this Active period?",
           "type": "select",
           "required": true,
-          "code": "Role",
+          "code": "ActiveRole",
           "formResetBehavior": "reset",
           "defaultValue": "None",
           "choices": {
@@ -339,7 +339,7 @@
           "description": "Did the robot play defense during the match?",
           "type": "boolean",
           "required": false,
-          "code": "robotDefended",
+          "code": "activerobotDefended",
           "formResetBehavior": "reset",
           "defaultValue": false
         },
@@ -348,7 +348,7 @@
           "description": "Rate the robot's defensive skill.",
           "type": "select",
           "required": false,
-          "code": "defSkill",
+          "code": "activedefSkill",
           "formResetBehavior": "reset",
           "defaultValue": "None",
           "choices": {
@@ -369,7 +369,7 @@
           "description": "Did the robot cross into the opposing alliance's zone?",
           "type": "boolean",
           "required": false,
-          "code": "crossedZone",
+          "code": "InactivecrossedZone",
           "formResetBehavior": "reset",
           "defaultValue": false
         },
@@ -378,7 +378,7 @@
           "description": "Where did the robot score/corral all of the balls to during the match?",
           "type": "select",
           "required": true,
-          "code": "GoldSpot2",
+          "code": "InactiveGoldSpot",
           "formResetBehavior": "reset",
           "defaultValue": "No",
           "choices": {
@@ -396,7 +396,7 @@
           "description": "What did the robot mainly do during this Active period?",
           "type": "select",
           "required": true,
-          "code": "Role2",
+          "code": "InactiveRole",
           "formResetBehavior": "reset",
           "defaultValue": "None",
           "choices": {
@@ -413,7 +413,7 @@
           "description": "Did the robot play defense during the match?",
           "type": "boolean",
           "required": false,
-          "code": "robotDefended",
+          "code": "InactiverobotDefended",
           "formResetBehavior": "reset",
           "defaultValue": false
         },
@@ -422,7 +422,7 @@
           "description": "Rate the robot's defensive skill.",
           "type": "select",
           "required": false,
-          "code": "defSkill",
+          "code": "InactivedefSkill",
           "formResetBehavior": "reset",
           "defaultValue": "None",
           "choices": {
