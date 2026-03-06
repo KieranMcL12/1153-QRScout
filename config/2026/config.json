@@ -143,6 +143,24 @@
       "name": "Autonomous",
       "fields": [
         {
+          "title": "Starting Position",
+          "description": "The starting position of the robot.",
+          "type": "select",
+          "required": true,
+          "code": "startPos",
+          "formResetBehavior": "reset",
+          "defaultValue": "",
+          "choices": {
+            "OT": "Outpost Trench",
+            "OBFT": "Outpost Bump Favoring Trench",
+            "OBFH": "Outpost Bump Favoring Hub",
+            "H": "Hub",
+            "DBFH": "Depot Bump Favoring Hub",
+            "DBFT": "Depot Bump Favoring Trench",
+            "DT": "Depot Trench"
+          }
+        },
+        {
           "title": "Actions",
           "description": "Track actions performed during autonomous.",
           "type": "action-tracker",
@@ -153,20 +171,28 @@
           "mode": "tap",
           "actions": [
             {
-              "label": "Scoring",
-              "code": "scoring"
+              "label": "Launch",
+              "code": "Launch"
             },
             {
-              "label": "Depot Collect",
-              "code": "depot_collect"
+              "label": "Collect",
+              "code": "collect"
             },
             {
-              "label": "Outpost Collect",
-              "code": "outpost_collect"
+              "label": "Leave",
+              "code": "Leave"
             },
             {
-              "label": "Ground Collect",
-              "code": "ground_collect"
+              "label": "Return",
+              "code": "Return"
+            },
+            {
+              "label": "Trench",
+              "code": "Trench"
+            },
+            {
+              "label": "Bump",
+              "code": "Bump"
             },
             {
               "label": "Passing",
@@ -174,22 +200,17 @@
             },
             {
               "label": "Faffing/Stuck on Fuel",
-              "code": "faffing"
+              "code": "Stuck"
+            },
+            {
+              "label": "Foul",
+              "code": "Foul"
             },
             {
               "label": "Climbing",
               "code": "climbing"
-            },
-            {
-              "label": "Bump",
-              "code": "bump"
-            },
-            {
-              "label": "Trench",
-              "code": "trench"
             }
-          ],
-          "timerDuration": 15
+          ]
         },
         {
           "title": "Climbed",
@@ -214,13 +235,26 @@
           "formResetBehavior": "reset",
           "defaultValue": "No",
           "choices": {
-            "No": "No Climb",
             "Out": "Output Side",
             "Mid": "Middle",
             "Dep": "Depot Side"
           }
         },
         {
+          "title": "End Position",
+          "description": "Where they ended on the field at the end of Autonomous?",
+          "type": "select",
+          "required": false,
+          "code": "autoEndPos",
+          "formResetBehavior": "reset",
+          "defaultValue": "No",
+          "choices": {
+            "Lef": "Left",
+            "Mid": "Middle",
+            "Rig": "Right"
+          }
+        },
+      {
           "title": "Scoring Acc. in Auto?",
           "description": "The percentage accuracy for the number of fuel scored in autonomous.",
           "type": "select",
@@ -294,19 +328,16 @@
           }
         },
         {
-          "title": "Scoring Acc. in Active Shift?",
-          "description": "The percentage accuracy for the number of fuel scored in autonomous.",
-          "type": "select",
+          "title": "Scoring Effectiveness in active shift?",
+          "description": "Rate the robot's scoring effectiveness.",
+          "type": "range",
           "required": false,
-          "code": "autoFuelScored",
+          "code": "scoringEff",
           "formResetBehavior": "reset",
-          "defaultValue": "0",
-          "choices": {
-            "0": "🟥 0%-25%",
-            "25": "🟧 25%-50%",
-            "50": "🟨 50%-75%",
-            "75": "🟩 75%-100%"
-          }
+          "defaultValue": 3,
+          "min": 0,
+          "max": 5,
+          "step": 1
         },
         {
           "title": "Defended during Active Shift?",
@@ -381,6 +412,18 @@
             "Pass": "Passer",
             "Defend": "Defender"
           }
+        },
+        {
+          "title": "Scoring Effectiveness during Inactive Shift?",
+          "description": "Rate the robot's scoring effectiveness.",
+          "type": "range",
+          "required": false,
+          "code": "scoringEff",
+          "formResetBehavior": "reset",
+          "defaultValue": 3,
+          "min": 0,
+          "max": 5,
+          "step": 1
         },
         {
           "title": "Defended during Inactive Shift?",
