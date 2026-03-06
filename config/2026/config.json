@@ -294,7 +294,7 @@
           }
         },
         {
-          "title": "Scoring Acc. in Auto?",
+          "title": "Scoring Acc. in Active Shift?",
           "description": "The percentage accuracy for the number of fuel scored in autonomous.",
           "type": "select",
           "required": false,
