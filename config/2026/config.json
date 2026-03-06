@@ -150,7 +150,7 @@
           "code": "autoActions",
           "formResetBehavior": "reset",
           "defaultValue": null,
-          "mode": "hold",
+          "mode": "tap",
           "actions": [
             {
               "label": "Scoring",
@@ -268,6 +268,18 @@
           "defaultValue": false
         },
         {
+          "title": "Scoring Effectiveness in active shift?",
+          "description": "Rate the robot's scoring effectiveness.",
+          "type": "range",
+          "required": false,
+          "code": "scoringEff",
+          "formResetBehavior": "reset",
+          "defaultValue": 3,
+          "min": 0,
+          "max": 5,
+          "step": 1
+        },
+        {
           "title": "Gold Spot during the Active Shift?",
           "description": "Where did the robot score/corral all of the balls to during the match?",
           "type": "select",
@@ -280,26 +292,44 @@
             "Depot": "Depot",
             "Outpost": "Outpost",
             "Tren": "Trench",
-            "Other": "Other spots (middle area of field)"
+            "Neu": "Neutral Zone",
+            "Oppo": "Opponent's Zone",
+            "Other": "Other spots (Middle area of own alliance zone)"
           }
-          },
-          {
-              "title": "Role of Robot during the Active shift?",
-              "description": "What did the robot mainly do during this Active period?",
-              "type": "select",
-              "required": true,
-              "code": "climbed",
-              "formResetBehavior": "reset",
-              "defaultValue": "None",
-              "choices": {
-              "No Role": "None",
-              "Score": "Scorer",
-              "Shoot": "Shooter",
-              "Shuttle": "Shuttler",
-              "Pass": "Passer",
-              "Defend": "Defender"
-              }
-          }      
+        },
+        {
+          "title": "Role of Robot during the Active shift?",
+          "description": "What did the robot mainly do during this Active period?",
+          "type": "select",
+          "required": true,
+          "code": "climbed",
+          "formResetBehavior": "reset",
+          "defaultValue": "None",
+          "choices": {
+            "No Role": "None",
+            "Score": "Scorer",
+            "Shoot": "Shooter",
+            "Shuttle": "Shuttler",
+            "Pass": "Passer",
+            "Defend": "Defender"
+          }
+        },
+        {
+          "title": "Defense Skill",
+          "description": "Rate the robot's defensive skill.",
+          "type": "select",
+          "required": false,
+          "code": "defSkill",
+          "formResetBehavior": "reset",
+          "defaultValue": "None",
+          "choices": {
+          "1": "Very Poor Defense",
+          "2": "Poor Defense",
+          "3": "Average Defense",
+          "4": "Good Defense",
+          "5": "Excellent Defense"
+          }
+        }
       ]
     },
     {
@@ -330,30 +360,60 @@
             "Pass": "Passer",
             "Defend": "Defender"
           }
-      }, 
-      {
-        "title": "Defended during Inactive Shift?",
-        "description": "Did the robot play defense during the match?",
-        "type": "boolean",
-        "required": false,
-        "code": "robotDefended",
-        "formResetBehavior": "reset",
-        "defaultValue": false
-      },
-      {
-        "title": "Gold Spot during Inactive Shift?",
-        "description": "Where did the robot score/corral all of the balls to during the match?",
-        "type": "select",
-        "required": true,
-        "code": "climbed",
-        "formResetBehavior": "reset",
-        "defaultValue": "No",
-        "choices": {
-          "Hub": "Hub",
-          "Depot": "Depot",
-          "Outpost": "Outpost",
-          "Tren": "Trench",
-          "Other": "Other spots (middle area of field)"
+        },
+        {
+          "title": "Defended during Inactive Shift?",
+          "description": "Did the robot play defense during the match?",
+          "type": "boolean",
+          "required": false,
+          "code": "robotDefended",
+          "formResetBehavior": "reset",
+          "defaultValue": false
+        },
+        {
+          "title": "Scoring Effectiveness during Inactive Shift?",
+          "description": "Rate the robot's scoring effectiveness.",
+          "type": "range",
+          "required": false,
+          "code": "scoringEff",
+          "formResetBehavior": "reset",
+          "defaultValue": 3,
+          "min": 0,
+          "max": 5,
+          "step": 1
+        },
+        {
+          "title": "Gold Spot during the InActive Shift?",
+          "description": "Where did the robot score/corral all of the balls to during the match?",
+          "type": "select",
+          "required": true,
+          "code": "climbed",
+          "formResetBehavior": "reset",
+          "defaultValue": "No",
+          "choices": {
+            "Hub": "Hub",
+            "Depot": "Depot",
+            "Outpost": "Outpost",
+            "Tren": "Trench",
+            "Neu": "Neutral Zone",
+            "Oppo": "Opponent's Zone",
+            "Other": "Other spots (Middle area of own alliance zone)"
+          }
+        },
+        {
+          "title": "Defense Skill",
+          "description": "Rate the robot's defensive skill.",
+          "type": "select",
+          "required": false,
+          "code": "defSkill",
+          "formResetBehavior": "reset",
+          "defaultValue": "None",
+          "choices": {
+          "1": "Very Poor Defense",
+          "2": "Poor Defense",
+          "3": "Average Defense",
+          "4": "Good Defense",
+          "5": "Excellent Defense"
         }
         }
       ]
@@ -391,50 +451,6 @@
             "Mid": "Middle",
             "Dep": "Depot Side"
           }
-        }
-      ]
-    },
-    {
-      "name": "Postmatch",
-      "fields": [
-        {
-          "title": "Mechanical Issue?",
-          "description": "Did the robot have a mechanical issue during the match?",
-          "type": "boolean",
-          "required": false,
-          "code": "mechIssue",
-          "formResetBehavior": "reset",
-          "defaultValue": false
-        },
-        {
-          "title": "Died?",
-          "description": "Did the robot die during the match?",
-          "type": "boolean",
-          "required": false,
-          "code": "died",
-          "formResetBehavior": "reset",
-          "defaultValue": false
-        },
-        {
-          "title": "Tipped/Fell Over",
-          "description": "Did the robot tip or fall over during the match?",
-          "type": "boolean",
-          "required": false,
-          "code": "tipped",
-          "formResetBehavior": "reset",
-          "defaultValue": false
-        },
-        {
-          "title": "Scoring Effectiveness",
-          "description": "Rate the robot's scoring effectiveness.",
-          "type": "range",
-          "required": false,
-          "code": "scoringEff",
-          "formResetBehavior": "reset",
-          "defaultValue": 3,
-          "min": 0,
-          "max": 5,
-          "step": 1
         },
         {
           "title": "Robot Overall Performance?",
@@ -445,11 +461,11 @@
           "formResetBehavior": "reset",
           "defaultValue": "",
           "choices": {
-            "1": "While driving",
-            "2": "While stationary",
-            "3": "Both",
-            "4": "No scoring",
-            "5": "No scoring"
+          "1": "Very Poor",
+          "2": "Below Average",
+          "3": "Average",
+          "4": "Strong",
+          "5": "Elite"
           }
         },
         {
@@ -495,16 +511,31 @@
           }
         },
         {
-          "title": "Defense Skill",
-          "description": "Rate the robot's defensive skill.",
-          "type": "range",
+          "title": "Mechanical Issue?",
+          "description": "Did the robot have a mechanical issue during the match?",
+          "type": "boolean",
           "required": false,
-          "code": "defSkill",
+          "code": "mechIssue",
           "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "max": 5,
-          "step": 1
+          "defaultValue": false
+        },
+        {
+          "title": "Died?",
+          "description": "Did the robot die during the match?",
+          "type": "boolean",
+          "required": false,
+          "code": "died",
+          "formResetBehavior": "reset",
+          "defaultValue": false
+        },
+        {
+          "title": "Tipped/Fell Over",
+          "description": "Did the robot tip or fall over during the match?",
+          "type": "boolean",
+          "required": false,
+          "code": "tipped",
+          "formResetBehavior": "reset",
+          "defaultValue": false
         },
         {
           "title": "Yellow/Red Card",
