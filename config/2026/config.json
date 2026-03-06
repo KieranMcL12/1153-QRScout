@@ -33,7 +33,7 @@
       "chart_3": "197 37% 24%",
       "chart_4": "43 74% 66%",
       "chart_5": "27 87% 67%"
-  },
+},
     "dark": {
       "background": "0 0% 3.9%",
       "foreground": "0 0% 98%",
@@ -59,8 +59,8 @@
       "chart_3": "30 80% 55%",
       "chart_4": "280 65% 60%",
       "chart_5": "340 75% 55%"
-    }
-},
+}
+  },
   "sections": [
     {
       "name": "Prematch",
@@ -259,27 +259,6 @@
           "defaultValue": false
         },
         {
-          "title": "Defended during Active Shift?",
-          "description": "Did the robot play defense during the match?",
-          "type": "boolean",
-          "required": false,
-          "code": "robotDefended",
-          "formResetBehavior": "reset",
-          "defaultValue": false
-        },
-        {
-          "title": "Scoring Effectiveness in active shift?",
-          "description": "Rate the robot's scoring effectiveness.",
-          "type": "range",
-          "required": false,
-          "code": "scoringEff",
-          "formResetBehavior": "reset",
-          "defaultValue": 3,
-          "min": 0,
-          "max": 5,
-          "step": 1
-        },
-        {
           "title": "Gold Spot during the Active Shift?",
           "description": "Where did the robot score/corral all of the balls to during the match?",
           "type": "select",
@@ -315,6 +294,27 @@
           }
         },
         {
+          "title": "Scoring Effectiveness in active shift?",
+          "description": "Rate the robot's scoring effectiveness.",
+          "type": "range",
+          "required": false,
+          "code": "scoringEff",
+          "formResetBehavior": "reset",
+          "defaultValue": 3,
+          "min": 0,
+          "max": 5,
+          "step": 1
+        },
+        {
+          "title": "Defended during Active Shift?",
+          "description": "Did the robot play defense during the match?",
+          "type": "boolean",
+          "required": false,
+          "code": "robotDefended",
+          "formResetBehavior": "reset",
+          "defaultValue": false
+        },
+        {
           "title": "Defense Skill",
           "description": "Rate the robot's defensive skill.",
           "type": "select",
@@ -345,6 +345,24 @@
           "defaultValue": false
         },
         {
+          "title": "Gold Spot during the InActive Shift?",
+          "description": "Where did the robot score/corral all of the balls to during the match?",
+          "type": "select",
+          "required": true,
+          "code": "climbed",
+          "formResetBehavior": "reset",
+          "defaultValue": "No",
+          "choices": {
+            "Hub": "Hub",
+            "Depot": "Depot",
+            "Outpost": "Outpost",
+            "Tren": "Trench",
+            "Neu": "Neutral Zone",
+            "Oppo": "Opponent's Zone",
+            "Other": "Other spots (Middle area of own alliance zone)"
+          }
+        },
+        {
           "title": "Role of Robot during Inactive Shift?",
           "description": "What did the robot mainly do during this Active period?",
           "type": "select",
@@ -362,15 +380,6 @@
           }
         },
         {
-          "title": "Defended during Inactive Shift?",
-          "description": "Did the robot play defense during the match?",
-          "type": "boolean",
-          "required": false,
-          "code": "robotDefended",
-          "formResetBehavior": "reset",
-          "defaultValue": false
-        },
-        {
           "title": "Scoring Effectiveness during Inactive Shift?",
           "description": "Rate the robot's scoring effectiveness.",
           "type": "range",
@@ -383,22 +392,13 @@
           "step": 1
         },
         {
-          "title": "Gold Spot during the InActive Shift?",
-          "description": "Where did the robot score/corral all of the balls to during the match?",
-          "type": "select",
-          "required": true,
-          "code": "climbed",
+          "title": "Defended during Inactive Shift?",
+          "description": "Did the robot play defense during the match?",
+          "type": "boolean",
+          "required": false,
+          "code": "robotDefended",
           "formResetBehavior": "reset",
-          "defaultValue": "No",
-          "choices": {
-            "Hub": "Hub",
-            "Depot": "Depot",
-            "Outpost": "Outpost",
-            "Tren": "Trench",
-            "Neu": "Neutral Zone",
-            "Oppo": "Opponent's Zone",
-            "Other": "Other spots (Middle area of own alliance zone)"
-          }
+          "defaultValue": false
         },
         {
           "title": "Defense Skill",
