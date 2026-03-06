@@ -294,16 +294,19 @@
           }
         },
         {
-          "title": "Scoring Effectiveness in active shift?",
-          "description": "Rate the robot's scoring effectiveness.",
-          "type": "range",
+          "title": "Scoring Acc. in Auto?",
+          "description": "The percentage accuracy for the number of fuel scored in autonomous.",
+          "type": "select",
           "required": false,
-          "code": "scoringEff",
+          "code": "autoFuelScored",
           "formResetBehavior": "reset",
-          "defaultValue": 3,
-          "min": 0,
-          "max": 5,
-          "step": 1
+          "defaultValue": "0",
+          "choices": {
+            "0": "🟥 0%-25%",
+            "25": "🟧 25%-50%",
+            "50": "🟨 50%-75%",
+            "75": "🟩 75%-100%"
+          }
         },
         {
           "title": "Defended during Active Shift?",
@@ -378,18 +381,6 @@
             "Pass": "Passer",
             "Defend": "Defender"
           }
-        },
-        {
-          "title": "Scoring Effectiveness during Inactive Shift?",
-          "description": "Rate the robot's scoring effectiveness.",
-          "type": "range",
-          "required": false,
-          "code": "scoringEff",
-          "formResetBehavior": "reset",
-          "defaultValue": 3,
-          "min": 0,
-          "max": 5,
-          "step": 1
         },
         {
           "title": "Defended during Inactive Shift?",
