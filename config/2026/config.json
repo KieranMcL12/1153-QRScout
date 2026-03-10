@@ -154,8 +154,10 @@
           "choices": {
             "Shotcen": "Shoot the balls, then drive to center",
             "Shothenmo": "Shoot then don't move",
-            "censhot": "Drive to center, return, then shoot balls"
-            "Notshomo": "Did not shoot or move",
+            "censhot": "Drive to center, return, then shoot balls",
+            "Notshomo": "Did not shoot or move"
+          }
+        },
         {
           "title": "Climbed",
           "description": "Did the robot climb during autonomous?",
@@ -407,7 +409,7 @@
           }
         },
         {
-          "title": "Where Climbed",
+          "title": "Robot Climbed Where?",
           "description": "Where on the tower did the robot climb?",
           "type": "select",
           "required": false,
@@ -448,6 +450,7 @@
           "min": 0,
           "max": 5,
           "step": 1
+        },
         {
           "title": "Mechanical Issue?",
           "description": "Did the robot have a mechanical issue during the match?",
