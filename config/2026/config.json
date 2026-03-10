@@ -392,6 +392,37 @@
     {
       "name": "Endgame",
       "fields": [
+         {
+          "title": "Best Team Number",
+          "description": "The team number of the robot you're scouting.",
+          "type": "TBA-team-and-robot",
+          "required": true,
+          "code": "teamNumber1",
+          "formResetBehavior": "reset",
+          "defaultValue": null
+        },
+         {
+          "title": "Second Best Team Number",
+          "description": "The team number of the robot you're scouting.",
+          "type": "TBA-team-and-robot",
+          "required": true,
+          "code": "teamNumber2",
+          "formResetBehavior": "reset",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 19999
+        },
+         {
+          "title": "Third Best Team Number",
+          "description": "The team number of the robot you're scouting.",
+          "type": "TBA-team-and-robot",
+          "required": true,
+          "code": "teamNumber3",
+          "formResetBehavior": "reset",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 19999
+        },
         {
           "title": "Climbed",
           "description": "The level the robot climbed during endgame.",
