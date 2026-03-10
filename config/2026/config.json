@@ -91,9 +91,7 @@
           "required": true,
           "code": "teamNumber",
           "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "max": 19999
+          "defaultValue": null
         },
         {
           "title": "Robot",
