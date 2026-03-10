@@ -150,7 +150,7 @@
           "required": false,
           "code": "autoClimbed",
           "formResetBehavior": "reset",
-          "defaultValue": "No",
+          "defaultValue": "Notshomo",
           "choices": {
             "Shotcen": "Shoot the balls, then drive to center",
             "Shothenmo": "Shoot then don't move",
@@ -179,7 +179,7 @@
           "required": false,
           "code": "autoClimbPos",
           "formResetBehavior": "reset",
-          "defaultValue": "No",
+          "defaultValue": "Outpost Side",
           "choices": {
             "Outpost": "Outpost Side",
             "Middle": "Middle",
@@ -193,7 +193,7 @@
           "required": false,
           "code": "autoEndPos",
           "formResetBehavior": "reset",
-          "defaultValue": "No",
+          "defaultValue": "Left",
           "choices": {
             "Lef": "Left",
             "Mid": "Middle",
@@ -245,7 +245,7 @@
           "required": true,
           "code": "ActiveGoldSpot",
           "formResetBehavior": "reset",
-          "defaultValue": "No",
+          "defaultValue": "Hub",
           "choices": {
             "Hub": "Hub",
             "Depot": "Depot",
@@ -263,7 +263,7 @@
           "required": true,
           "code": "ActiveRole",
           "formResetBehavior": "reset",
-          "defaultValue": "None",
+          "defaultValue": "No Role",
           "choices": {
             "No Role": "None",
             "Score": "Scorer",
@@ -304,7 +304,7 @@
           "required": false,
           "code": "activedefSkill",
           "formResetBehavior": "reset",
-          "defaultValue": "None",
+          "defaultValue": "1",
           "choices": {
           "1": "Very Poor Defense",
           "2": "Poor Defense",
@@ -334,7 +334,7 @@
           "required": true,
           "code": "InactiveGoldSpot",
           "formResetBehavior": "reset",
-          "defaultValue": "No",
+          "defaultValue": "Hub",
           "choices": {
             "Hub": "Hub",
             "Depot": "Depot",
@@ -352,7 +352,7 @@
           "required": true,
           "code": "InactiveRole",
           "formResetBehavior": "reset",
-          "defaultValue": "None",
+          "defaultValue": "No Role",
           "choices": {
             "No Role": "None",
             "Score": "Scorer",
@@ -378,7 +378,7 @@
           "required": false,
           "code": "InactivedefSkill",
           "formResetBehavior": "reset",
-          "defaultValue": "None",
+          "defaultValue": "1",
           "choices": {
           "1": "Very Poor Defense",
           "2": "Poor Defense",
@@ -408,9 +408,7 @@
           "required": true,
           "code": "teamNumber2",
           "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "max": 19999
+          "defaultValue": null
         },
          {
           "title": "Third Best Team Number",
@@ -419,9 +417,7 @@
           "required": true,
           "code": "teamNumber3",
           "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "max": 19999
+          "defaultValue": null
         },
         {
           "title": "Climbed",
