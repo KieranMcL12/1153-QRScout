@@ -144,57 +144,18 @@
       "name": "Autonomous",
       "fields": [
         {
-          "title": "Actions",
-          "description": "Track actions performed during autonomous.",
-          "type": "action-tracker",
+          "title": "First Action then second Action",
+          "description": "Did the robot climb during autonomous?",
+          "type": "select",
           "required": false,
-          "code": "autoActions",
+          "code": "autoClimbed",
           "formResetBehavior": "reset",
-          "defaultValue": null,
-          "mode": "tap",
-          "actions": [
-            {
-              "label": "Launch",
-              "code": "Launch"
-            },
-            {
-              "label": "Collect",
-              "code": "collect"
-            },
-            {
-              "label": "Leave",
-              "code": "Leave"
-            },
-            {
-              "label": "Return",
-              "code": "Return"
-            },
-            {
-              "label": "Trench",
-              "code": "Trench"
-            },
-            {
-              "label": "Bump",
-              "code": "Bump"
-            },
-            {
-              "label": "Passing",
-              "code": "passing"
-            },
-            {
-              "label": "Faffing/Stuck on Fuel",
-              "code": "Stuck"
-            },
-            {
-              "label": "Foul",
-              "code": "Foul"
-            },
-            {
-              "label": "Climbing",
-              "code": "climbing"
-            }
-          ]
-        },
+          "defaultValue": "No",
+          "choices": {
+            "Shotcen": "Shoot the balls, then drive to center",
+            "Shothenmo": "Shoot then don't move",
+            "censhot": "Drive to center, return, then shoot balls"
+            "Notshomo": "Did not shoot or move",
         {
           "title": "Climbed",
           "description": "Did the robot climb during autonomous?",
@@ -236,16 +197,7 @@
             "Mid": "Middle",
             "Rig": "Right"
           }
-        },
-        {
-          "title": "Alliance won auto?",
-          "description": "Did your alliance win the autonomous period?",
-          "type": "boolean",
-          "required": false,
-          "code": "allianceWonAuto",
-          "formResetBehavior": "reset",
-          "defaultValue": false
-        },        
+        },     
         {
           "title": "Scoring Acc. in Auto?",
           "description": "The percentage accuracy for the number of fuel scored in autonomous.",
@@ -496,37 +448,6 @@
           "min": 0,
           "max": 5,
           "step": 1
-        },
-        {
-          "title": "Passed How?",
-          "description": "How did the robot pass?",
-          "type": "select",
-          "required": false,
-          "code": "passedHow",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "driving": "While driving",
-            "stationary": "While stationary",
-            "both": "Both",
-            "none": "No Passing"
-          }
-        },
-        {
-          "title": "Passing Location?",
-          "description": "Where did the robot pass?",
-          "type": "select",
-          "required": false,
-          "code": "passLoc",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "scattered": "Scattered",
-            "intentional": "Intentional",
-            "both": "Both",
-            "none": "No passing"
-          }
-        },
         {
           "title": "Mechanical Issue?",
           "description": "Did the robot have a mechanical issue during the match?",
