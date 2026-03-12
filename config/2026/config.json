@@ -91,7 +91,7 @@
           "required": true,
           "code": "teamNumber",
           "formResetBehavior": "reset",
-          "defaultValue": null
+          "defaultValue": 0
         },
         {
           "title": "Robot",
@@ -399,7 +399,7 @@
           "required": true,
           "code": "teamNumber1",
           "formResetBehavior": "reset",
-          "defaultValue": null
+          "defaultValue": 0
         },
          {
           "title": "Second Best Team Number",
@@ -408,7 +408,7 @@
           "required": true,
           "code": "teamNumber2",
           "formResetBehavior": "reset",
-          "defaultValue": null
+          "defaultValue": 0
         },
          {
           "title": "Third Best Team Number",
@@ -417,7 +417,7 @@
           "required": true,
           "code": "teamNumber3",
           "formResetBehavior": "reset",
-          "defaultValue": null
+          "defaultValue": 0
         },
         {
           "title": "Climbed",
