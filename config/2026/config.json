@@ -158,7 +158,7 @@
         },
         {
           "title": "Climbed",
-          "description": "The level the robot climbed during endgame.",
+          "description": "The level the robot climbed during autonomous.",
           "type": "select",
           "required": true,
           "code": "climbed",
@@ -170,6 +170,7 @@
             "L2": "Level 2",
             "L3": "Level 3",
             "F": "Failed Climb"
+          }
         },
         {
           "title": "Where Climbed",
