@@ -158,17 +158,18 @@
         },
         {
           "title": "Climbed",
-          "description": "Did the robot climb during autonomous?",
+          "description": "The level the robot climbed during endgame.",
           "type": "select",
-          "required": false,
-          "code": "autoClimbed",
+          "required": true,
+          "code": "climbed",
           "formResetBehavior": "reset",
           "defaultValue": "No",
           "choices": {
             "No": "No Climb",
-            "Yes": "Climb",
-            "Fail": "Failed Climb"
-          }
+            "L1": "Level 1",
+            "L2": "Level 2",
+            "L3": "Level 3",
+            "F": "Failed Climb"
         },
         {
           "title": "Where Climbed",
